@@ -10,11 +10,12 @@ document.getElementById("form-cadastro")?.addEventListener("submit", function(ev
     event.preventDefault();
 
     const nome = document.getElementById("nome").value;
+    const senha = document.getElementById("senha").value;
     const email = document.getElementById("email").value;
     const funcao = document.getElementById("funcao").value;
 
     // Criar o usuário no localStorage
-    localStorageData.usuario = { nome, email, funcao };
+    localStorageData.usuario = { nome, email, senha, funcao };
     localStorage.setItem("usuario", JSON.stringify(localStorageData.usuario));
 
     // Redirecionar para o dashboard do usuário
