@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Usuário - Trajetus</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #111317;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Formulário de Cadastro */
+    .signup__container {
+      background-color: #fff;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup__container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form__group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form__group label {
+      font-weight: bold;
+      display: block;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .form__group input,
+    .form__group select {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    .form__group input:focus,
+    .form__group select:focus {
+      border-color: #f9ac54;
+      outline: none;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #f9ac54;
+      color: white;
+      padding: 1rem;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #f9ac54;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .login-link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .login-link a:hover {
+      color: #f9ac54;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .signup__container {
+        padding: 1.5rem;
+      }
+
+      .signup__container h2 {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+    }
+
+    /* Link de Voltar para a Página Inicial */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .back-link a:hover {
+      color: #f9ac54;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup__container">
+    <h2>Login de Usuário</h2>
+    <form id="loginForm" action="#" method="POST">
+      <div class="form__group">
+        <label for="username">Nome Completo</label>
+        <input type="text" id="username" name="username" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <div class="form__group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+
+      <div class="form__group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      </div>
+
+      <div class="form__group">
+        <label for="userType">Tipo de Usuário</label>
+        <select id="userType" name="userType" required>
+          <option value="" disabled selected>Selecione...</option>
+          <option value="aluno">Aluno</option>
+          <option value="professor">Professor</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <!-- Link para Voltar à Página Inicial -->
+    <div class="back-link">
+      <a href="index.html">Voltar para a Página Inicial</a>
+    </div>
+  </div>
+
+  <script>
+    // Script para redirecionamento com base no tipo de usuário
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var userType = document.getElementById('userType').value;
+
+      if (userType === 'aluno') {
+        window.location.href = 'dashboard.html'; // Redireciona para o Dashboard do Aluno
+      } else if (userType === 'professor') {
+        window.location.href = 'dashboardprofessor.html'; // Redireciona para o Dashboard do Professor
+      } else {
+        alert('Por favor, selecione o tipo de usuário.');
+      }
+    });
+  </script>
+</body>
+</html>

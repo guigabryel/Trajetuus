@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Aulas - Dashboard Professor</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .aulas-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .aula-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+    }
+
+    .aula-item h3 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .aula-item p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .aula-item .actions a {
+      text-decoration: none;
+      color: #f9ac54;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="aulas-container">
+      <div class="header">
+        <h1>Minhas Aulas</h1>
+      </div>
+
+      <div class="aula-item">
+        <div class="info">
+          <h3>Musculação - Treino de Pernas</h3>
+          <p>Data: 12/12/2024 | Horário: 14:00</p>
+          <p>Local: Sala de Musculação</p>
+        </div>
+        <div class="actions">
+          <a href="#">Editar</a>
+          <a href="#">Cancelar Aula</a>
+        </div>
+      </div>
+
+      <div class="aula-item">
+        <div class="info">
+          <h3>Aula de Yoga para Iniciantes</h3>
+          <p>Data: 15/12/2024 | Horário: 10:00</p>
+          <p>Local: Sala de Yoga</p>
+        </div>
+        <div class="actions">
+          <a href="#">Editar</a>
+          <a href="#">Cancelar Aula</a>
+        </div>
+      </div>
+
+      <div class="aula-item">
+        <div class="info">
+          <h3>Treino Funcional - Alta Intensidade</h3>
+          <p>Data: 20/12/2024 | Horário: 17:00</p>
+          <p>Local: Área de Cardio</p>
+        </div>
+        <div class="actions">
+          <a href="#">Editar</a>
+          <a href="#">Cancelar Aula</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="dashboardprofessor.html">Voltar ao Dashboard</a>
+  </footer>
+
+</body>
+</html>

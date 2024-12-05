@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Aluno</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Garantir que o body ocupe toda a altura da tela */
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* Dashboard Container */
+    .dashboard__container {
+      padding: 2rem;
+      flex: 1; /* Permite que a área de conteúdo ocupe o espaço restante */
+    }
+
+    .dashboard__header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .dashboard__header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .dashboard__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .dashboard__link {
+      text-decoration: none;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .dashboard__link:hover {
+      background-color: #f9ac54;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #f9ac54;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Conteúdo do Dashboard do Aluno -->
+  <div class="dashboard__container">
+    <div class="dashboard__header">
+      <h1>Bem-vindo ao Dashboard do Aluno</h1>
+    </div>
+
+    <div class="dashboard__nav">
+      <a href="treinos.html" class="dashboard__link">Treinos</a>
+      <a href="professores.html" class="dashboard__link">Professores Disponíveis</a>
+      <a href="avaliacao_enviada.html" class="dashboard__link">Avaliar Professores</a>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="index.html">Voltar Para o Home</a>
+  </footer>
+
+</body>
+</html>

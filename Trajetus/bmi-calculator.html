@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Calculadora de IMC</title>
+    <style>
+      /* Estilos para o formulário de cálculo de IMC */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #111317;
+        margin: 0;
+        padding: 0;
+      }
+
+      .bmi__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .bmi__form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .bmi__form:hover {
+        transform: scale(1.05);
+      }
+
+      .bmi__form label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .bmi__form input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fafafa;
+        color: #333;
+        transition: border-color 0.3s, background-color 0.3s;
+      }
+
+      .bmi__form input:focus {
+        border-color: #f9ac54;
+        background-color: #f3f2ff;
+        outline: none;
+      }
+
+      .bmi__form button {
+        width: 100%;
+        padding: 15px;
+        background-color: #f9ac54;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .bmi__form button:hover {
+        background-color: #f9ac54;
+      }
+
+      .bmi__result {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .bmi__result h3 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .bmi__result p {
+        font-size: 18px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Início</a></li>
+        <li class="link"><a href="suporte.html">Suporte</a></li>
+        <li class="link"><a href="feedbacks.html">Feedbacks</a></li>
+        <li class="link"><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <a href="login.html">
+        <button class="btn">Junte-se Agora</button>
+      </a>
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>CALCULADORA DE IMC</h4>
+        <h1><span>CALCULE</span> SEU IMC</h1>
+        <p>
+          Descubra seu Índice de Massa Corporal (IMC) e saiba mais sobre sua saúde física!
+        </p>
+      </div>
+      <div class="header__image">
+        <img src="img/header.png" alt="header" />
+      </div>
+    </header>
+
+    <section class="section__container bmi__container">
+      <h2 class="section__header">Informe seus dados</h2>
+      <div class="bmi__form">
+        <label for="weight">Peso (kg):</label>
+        <input type="number" id="weight" placeholder="Digite seu peso" />
+
+        <label for="height">Altura (cm):</label>
+        <input type="number" id="height" placeholder="Digite sua altura" />
+
+        <button class="btn" onclick="calculateBMI()">Calcular IMC</button>
+      </div>
+      <div id="bmi-result" class="bmi__result">
+        <h3>Resultado:</h3>
+        <p>Aqui aparecerá o seu IMC</p>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__bar">
+        Copyright © 2024 Trajetus. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      function calculateBMI() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+          alert("Por favor, insira valores válidos para peso e altura.");
+          return;
+        }
+
+        const bmi = weight / (height * height);
+        let result = `Seu IMC é ${bmi.toFixed(2)}.`;
+
+        if (bmi < 18.5) {
+          result += " Você está abaixo do peso.";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+          result += " Você está com o peso normal.";
+        } else if (bmi >= 25 && bmi < 29.9) {
+          result += " Você está acima do peso.";
+        } else {
+          result += " Você está obeso.";
+        }
+
+        document.getElementById('bmi-result').textContent = result;
+      }
+    </script>
+  </body>
+</html>

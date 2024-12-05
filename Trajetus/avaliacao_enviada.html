@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliar Professores</title>
+  <style>
+    /* Estilo Geral */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-grow: 1;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #f9ac54;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    form button {
+      background-color: #f9ac54;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #e48939;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Ajuste de Responsividade */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      form label, form input, form select, form textarea {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Conteúdo Principal -->
+  <div class="container">
+    <!-- Introdução -->
+    <section class="section">
+      <h2>Envie seu Feedback</h2>
+      <p>Nos ajude a melhorar a experiência! Avalie os professores com base na sua experiência e envie feedbacks que possam ajudar outros alunos.</p>
+    </section>
+
+    <!-- Formulário de Avaliação -->
+    <section class="section">
+      <h2>Formulário de Avaliação</h2>
+      <form id="avaliarProfessor">
+        <label for="nomeProfessor">Selecione o Professor</label>
+        <select id="nomeProfessor" name="nomeProfessor" required>
+          <option value="" disabled selected>Escolha um professor</option>
+          <option value="João Silva">João Silva</option>
+          <option value="Maria Oliveira">Maria Oliveira</option>
+          <option value="Carlos Souza">Carlos Souza</option>
+        </select>
+
+        <label for="notaProfessor">Nota (1 - 5)</label>
+        <select id="notaProfessor" name="notaProfessor" required>
+          <option value="" disabled selected>Escolha uma nota</option>
+          <option value="1">1 - Péssimo</option>
+          <option value="2">2 - Ruim</option>
+          <option value="3">3 - Regular</option>
+          <option value="4">4 - Bom</option>
+          <option value="5">5 - Excelente</option>
+        </select>
+
+        <label for="comentario">Comentário</label>
+        <textarea id="comentario" name="comentario" placeholder="Deixe seu feedback aqui..." required></textarea>
+
+        <button type="submit">Enviar Avaliação</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="dashboard.html">Voltar ao Dashboard</a>
+  </footer>
+
+  <script>
+    document.getElementById('avaliarProfessor').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const professor = document.getElementById('nomeProfessor').value;
+      const nota = document.getElementById('notaProfessor').value;
+      const comentario = document.getElementById('comentario').value;
+
+      alert(`Avaliação enviada com sucesso!\n\nProfessor: ${professor}\nNota: ${nota}\nComentário: ${comentario}`);
+      
+      // Aqui você pode adicionar código para salvar os dados no servidor.
+      document.getElementById('avaliarProfessor').reset();
+    });
+  </script>
+
+</body>
+</html>

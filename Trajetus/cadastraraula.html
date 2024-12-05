@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Nova Aula - Dashboard Professor</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #f9ac54;
+      outline: none;
+    }
+
+    .form-group button {
+      padding: 1rem;
+      background-color: #f9ac54;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group button:hover {
+      background-color: #f09c40;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="form-container">
+      <div class="header">
+        <h1>Cadastrar Nova Aula de Treino</h1>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="titulo">Título da Aula</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ex: Musculação - Treino de Pernas" required>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" placeholder="Descreva brevemente o conteúdo da aula." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data da Aula</label>
+          <input type="date" id="data" name="data" required>
+        </div>
+
+        <div class="form-group">
+          <label for="horario">Horário</label>
+          <input type="time" id="horario" name="horario" required>
+        </div>
+
+        <div class="form-group">
+          <label for="local">Local</label>
+          <select id="local" name="local" required>
+            <option value="sala-musculacao">Sala de Musculação</option>
+            <option value="area-cardio">Área de Cardio</option>
+            <option value="sala-yoga">Sala de Yoga</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Cadastrar Aula</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="dashboardprofessor.html">Voltar ao Dashboard</a>
+  </footer>
+
+</body>
+</html>

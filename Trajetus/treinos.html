@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinos - Plano Personalizado</title>
+  <style>
+    /* Estilo Geral */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #f9ac54;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .plan__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .plan__item {
+      flex: 1 1 calc(33.333% - 1rem);
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .plan__item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .plan__item h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan__item p {
+      color: #666;
+    }
+
+    .tips {
+      background-color: #f9f9f9;
+      border-left: 4px solid #f9ac54;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .tips h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Conteúdo Principal -->
+  <div class="container">
+
+    <!-- Introdução -->
+    <section class="section">
+      <h2>Bem-vindo ao seu Plano de Treinos</h2>
+      <p>Aqui você encontrará um plano de treinos personalizado, histórico de atividades, e dicas para otimizar seus resultados. Vamos juntos nessa jornada!</p>
+    </section>
+
+    <!-- Seção de Plano de Treinos -->
+    <section class="section">
+      <h2>Seu Plano de Treinos</h2>
+      <ul class="plan__list">
+        <li class="plan__item">
+          <h3>Treino A: Peito e Tríceps</h3>
+          <p>3 séries de supino reto, 4 séries de paralelas, 3 séries de tríceps francês.</p>
+        </li>
+        <li class="plan__item">
+          <h3>Treino B: Costas e Bíceps</h3>
+          <p>4 séries de puxador, 3 séries de barra fixa, 3 séries de rosca direta.</p>
+        </li>
+        <li class="plan__item">
+          <h3>Treino C: Pernas e Ombros</h3>
+          <p>4 séries de agachamento livre, 3 séries de elevação lateral, 3 séries de stiff.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Seção de Histórico -->
+    <section class="section">
+      <h2>Histórico de Atividades</h2>
+      <p>Acompanhe sua evolução e veja os treinos já realizados:</p>
+      <ul class="plan__list">
+        <li class="plan__item">
+          <h3>Dia 01</h3>
+          <p>Treino A completo. Peso do supino: 40kg. Repetições: 12-10-8.</p>
+        </li>
+        <li class="plan__item">
+          <h3>Dia 02</h3>
+          <p>Treino B completo. Peso do puxador: 60kg. Repetições: 12-12-10.</p>
+        </li>
+        <li class="plan__item">
+          <h3>Dia 03</h3>
+          <p>Treino C completo. Peso do agachamento: 70kg. Repetições: 10-10-8.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Dicas e Recomendações -->
+    <section class="section">
+      <h2>Dicas para Melhorar Seu Treino</h2>
+      <div class="tips">
+        <h3>Dica 1: Consistência</h3>
+        <p>Faça treinos regulares e mantenha sua disciplina para obter melhores resultados.</p>
+      </div>
+      <div class="tips">
+        <h3>Dica 2: Alimentação</h3>
+        <p>Combine os treinos com uma dieta equilibrada, rica em proteínas e carboidratos de qualidade.</p>
+      </div>
+      <div class="tips">
+        <h3>Dica 3: Hidratação</h3>
+        <p>Beba bastante água durante o dia para manter seu corpo bem hidratado.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="dashboard.html">Voltar ao Dashboard</a>
+  </footer>
+
+</body>
+</html>

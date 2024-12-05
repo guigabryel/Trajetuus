@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professores Disponíveis</title>
+  <style>
+    /* Estilo Geral */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #f9ac54;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .professor__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .professor__item {
+      flex: 1 1 calc(33.333% - 1rem);
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .professor__item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .professor__item h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .professor__item p {
+      color: #666;
+    }
+
+    .contact__button {
+      background-color: #f9ac54;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact__button:hover {
+      background-color: #e48939;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Conteúdo Principal -->
+  <div class="container">
+
+    <!-- Introdução -->
+    <section class="section">
+      <h2>Encontre o Professor Ideal</h2>
+      <p>Veja a lista de professores disponíveis, suas especialidades e entre em contato para começar seus treinos.</p>
+    </section>
+
+    <!-- Lista de Professores -->
+    <section class="section">
+      <h2>Professores</h2>
+      <ul class="professor__list">
+        <li class="professor__item">
+          <h3>João Silva</h3>
+          <p>Especialista em Treinamento Funcional</p>
+          <p><strong>Experiência:</strong> 5 anos</p>
+          <p><strong>Contato:</strong> joao.silva@email.com</p>
+          <button class="contact__button" onclick="alert('Entrando em contato com João Silva')">Entrar em Contato</button>
+        </li>
+        <li class="professor__item">
+          <h3>Maria Oliveira</h3>
+          <p>Especialista em Pilates e Reabilitação</p>
+          <p><strong>Experiência:</strong> 8 anos</p>
+          <p><strong>Contato:</strong> maria.oliveira@email.com</p>
+          <button class="contact__button" onclick="alert('Entrando em contato com Maria Oliveira')">Entrar em Contato</button>
+        </li>
+        <li class="professor__item">
+          <h3>Carlos Souza</h3>
+          <p>Especialista em Musculação e Hipertrofia</p>
+          <p><strong>Experiência:</strong> 10 anos</p>
+          <p><strong>Contato:</strong> carlos.souza@email.com</p>
+          <button class="contact__button" onclick="alert('Entrando em contato com Carlos Souza')">Entrar em Contato</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Recomendações -->
+    <section class="section">
+      <h2>Por que Escolher um Professor?</h2>
+      <p>Ter um professor ao seu lado garante que você atinja seus objetivos de forma mais rápida e segura. Nossos professores são altamente qualificados e prontos para atender suas necessidades.</p>
+    </section>
+
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="dashboard.html">Voltar ao Dashboard</a>
+  </footer>
+
+</body>
+</html>

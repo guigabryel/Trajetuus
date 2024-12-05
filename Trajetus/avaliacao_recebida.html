@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliações Recebidas - Dashboard Professor</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avaliacoes-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .avaliacao-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+    }
+
+    .avaliacao-item .top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .avaliacao-item .top h3 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .avaliacao-item .top p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .avaliacao-item .rating {
+      font-size: 1.2rem;
+      color: #f9ac54;
+    }
+
+    .avaliacao-item .feedback {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f9ac54;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="avaliacoes-container">
+      <div class="header">
+        <h1>Avaliações Recebidas</h1>
+      </div>
+
+      <div class="avaliacao-item">
+        <div class="top">
+          <h3>Maria Silva</h3>
+          <p>Data: 12/12/2024</p>
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆</div>
+        <div class="feedback">
+          <p>Ótima aula! O conteúdo foi claro e bem organizado. O professor tem muita paciência e explica com calma. Recomendo!</p>
+        </div>
+      </div>
+
+      <div class="avaliacao-item">
+        <div class="top">
+          <h3>João Pereira</h3>
+          <p>Data: 13/12/2024</p>
+        </div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <div class="feedback">
+          <p>Excelente aula! O professor soube direcionar muito bem o treino, com exercícios adequados para todos os níveis. Amei!</p>
+        </div>
+      </div>
+
+      <div class="avaliacao-item">
+        <div class="top">
+          <h3>Ana Costa</h3>
+          <p>Data: 14/12/2024</p>
+        </div>
+        <div class="rating">⭐⭐⭐☆☆</div>
+        <div class="feedback">
+          <p>A aula foi boa, mas senti que poderia ter mais variedade de exercícios. Acho que a próxima aula será melhor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="dashboardprofessor.html">Voltar ao Dashboard</a>
+  </footer>
+
+</body>
+</html>

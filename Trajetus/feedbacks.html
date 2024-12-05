@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Feedbacks - Trajetus</title>
+    <style>
+      /* Feedbacks Form Section */
+      .feedback__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: transparent; /* Remove o fundo */
+      }
+
+      .feedback__form {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: transparent; /* Remove o fundo */
+      }
+
+      .feedback__form h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #ffffff;
+      }
+
+      .form__group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form__group label {
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .form__group input,
+      .form__group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333; /* Cor do texto dentro do campo */
+        background-color: #fff; /* Cor de fundo do campo */
+      }
+
+      .form__group textarea {
+        resize: none;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #f9ac54; /* Cor amarela específica */
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background-color: #f9ac54; /* Amarelo mais suave ao passar o mouse */
+      }
+
+      /* Testimonials Section */
+      .testimonials__carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: transparent; /* Remove o fundo */
+      }
+
+      .testimonial__item {
+        text-align: center;
+        font-style: italic;
+        color: #ffffff;
+      }
+
+      .testimonial__item h4 {
+        margin-top: 0.5rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Início</a></li>
+        <li class="link"><a href="suporte.html">Suporte</a></li>
+        <li class="link"><a href="feedbacks.html">Feedbacks</a></li>
+        <li class="link"><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <a href="login.html">
+        <button class="btn">Junte-se Agora</button>
+      </a>
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>SUAS OPINIÕES IMPORTAM</h4>
+        <h1><span>ENVIE</span> SEU FEEDBACK</h1>
+        <p>
+          Queremos ouvir você! Envie suas opiniões e ajude-nos a melhorar nossos
+          serviços e atendê-lo da melhor forma possível.
+        </p>
+      </div>
+      <div class="header__image">
+        <img src="img/header.png" alt="feedback" />
+      </div>
+    </header>
+
+    <section class="section__container feedback__container">
+      <form id="feedback-form" class="feedback__form">
+        <h2 class="section__header">Envie seu Feedback</h2>
+        <div class="form__group">
+          <label for="feedback-name">Nome Completo</label>
+          <input type="text" id="feedback-name" placeholder="Seu Nome" required />
+        </div>
+        <div class="form__group">
+          <label for="feedback-email">E-mail</label>
+          <input type="email" id="feedback-email" placeholder="Seu E-mail" required />
+        </div>
+        <div class="form__group">
+          <label for="feedback-message">Sua Mensagem</label>
+          <textarea id="feedback-message" rows="5" placeholder="Escreva seu feedback aqui..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar Feedback</button>
+      </form>
+    </section>
+
+    <section class="section__container testimonials__container">
+      <h2 class="section__header">O que nossos clientes dizem</h2>
+      <div class="testimonials__carousel">
+        <div class="testimonial__item">
+          <p>
+            "Adoro os treinos personalizados e o suporte da equipe! Minha
+            transformação foi incrível."
+          </p>
+          <h4>- Joana Oliveira</h4>
+        </div>
+        <div class="testimonial__item">
+          <p>
+            "A melhor academia da cidade! Sempre inovadora e focada na nossa
+            saúde."
+          </p>
+          <h4>- Ricardo Lima</h4>
+        </div>
+        <div class="testimonial__item">
+          <p>
+            "Os planos são muito acessíveis e a estrutura é de primeira.
+            Recomendo muito!"
+          </p>
+          <h4>- Mariana Costa</h4>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__bar">
+        Copyright © 2024 Trajetus. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("feedback-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Seu feedback foi enviado com sucesso. Obrigado!");
+        this.reset();
+      });
+    </script>
+  </body>
+</html>

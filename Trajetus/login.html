@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login e Cadastro - Trajetus</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset de Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #111317;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background-color: #fff;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    /* Abas para Login / Cadastro */
+    .auth-tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+    }
+
+    .auth-tabs div {
+      font-size: 1.1rem;
+      color: #333;
+      cursor: pointer;
+      padding-bottom: 0.5rem;
+      transition: border-bottom 0.3s ease;
+    }
+
+    .auth-tabs .active {
+      font-weight: bold;
+      border-bottom: 2px solid #f9ac54;
+    }
+
+    .form__group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form__group label {
+      font-weight: bold;
+      display: block;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .form__group input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    .form__group input:focus {
+      border-color: #f9ac54;
+      outline: none;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #f9ac54;
+      color: white;
+      padding: 1rem;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #f9ac54;
+    }
+
+    .switch-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .switch-link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .switch-link a:hover {
+      color: #f9ac54;
+    }
+
+    /* Link de Voltar para a Página Inicial */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .back-link a:hover {
+      color: #f9ac54;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .auth-container {
+        padding: 1.5rem;
+      }
+
+      .auth-container h2 {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2 id="auth-title">Login</h2>
+
+    <div class="auth-tabs">
+      <div id="login-tab" class="active" onclick="showForm('login')">Login</div>
+      <div id="signup-tab" onclick="showForm('signup')">Cadastro</div>
+    </div>
+
+    <form id="auth-form" action="dashboard.html" method="POST">
+      <!-- Formulário de Login -->
+      <div id="login-form" class="auth-form">
+        <div class="form__group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <div class="form__group">
+          <label for="login-password">Senha</label>
+          <input type="password" id="login-password" name="password" placeholder="Digite sua senha" required>
+        </div>
+
+        <button type="submit" class="btn">Entrar</button>
+      </div>
+
+      <!-- Formulário de Cadastro -->
+      <div id="signup-form" class="auth-form" style="display: none;">
+        <div class="form__group">
+          <label for="signup-username">Nome Completo</label>
+          <input type="text" id="signup-username" name="username" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="form__group">
+          <label for="signup-email">E-mail</label>
+          <input type="email" id="signup-email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <div class="form__group">
+          <label for="signup-password">Senha</label>
+          <input type="password" id="signup-password" name="password" placeholder="Digite sua senha" required>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar</button>
+      </div>
+    </form>
+
+    <div class="switch-link">
+      <p id="switch-text">Não tem uma conta? <a href="javascript:void(0)" onclick="toggleForm()">Cadastre-se aqui</a></p>
+    </div>
+
+    <!-- Link de Voltar para Página Inicial -->
+    <div class="back-link">
+      <a href="index.html">Voltar para a Página Inicial</a>
+    </div>
+  </div>
+
+  <script>
+    // Função para alternar entre Login e Cadastro
+    function showForm(formType) {
+      if (formType === 'login') {
+        document.getElementById('auth-title').innerText = 'Login';
+        document.getElementById('login-tab').classList.add('active');
+        document.getElementById('signup-tab').classList.remove('active');
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('switch-text').innerHTML = 'Não tem uma conta? <a href="javascript:void(0)" onclick="toggleForm()">Cadastre-se aqui</a>';
+      } else {
+        document.getElementById('auth-title').innerText = 'Cadastro';
+        document.getElementById('login-tab').classList.remove('active');
+        document.getElementById('signup-tab').classList.add('active');
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'block';
+        document.getElementById('switch-text').innerHTML = 'Já tem uma conta? <a href="javascript:void(0)" onclick="toggleForm()">Faça login aqui</a>';
+      }
+    }
+
+    // Função para alternar a exibição de formulários
+    function toggleForm() {
+      const currentTab = document.querySelector('.auth-tabs .active').id;
+      if (currentTab === 'login-tab') {
+        showForm('signup');
+      } else {
+        showForm('login');
+      }
+    }
+  </script>
+
+</body>
+</html>

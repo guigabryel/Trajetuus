@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Contato - Trajetus</title>
+    <style>
+      /* Estilo para o formulário de contato */
+      .contact__container {
+        padding: 50px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact__form {
+        display: grid;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact__form .form__group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact__form label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .contact__form input,
+      .contact__form textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #333;
+        background-color: #f4f4f4;
+        transition: border 0.3s ease;
+      }
+
+      .contact__form input:focus,
+      .contact__form textarea:focus {
+        border-color: #f9ac54;
+        outline: none;
+      }
+
+      .contact__form textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      .contact__form button {
+        padding: 12px;
+        background-color: #f9ac54;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact__form button:hover {
+        background-color: #f9ac54;
+      }
+
+      .contact__details {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .contact__details p {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .contact__details strong {
+        font-weight: 600;
+        color: #007bff;
+      }
+
+      .contact__details a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .contact__details a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Início</a></li>
+        <li class="link"><a href="suporte.html">Suporte</a></li>
+        <li class="link"><a href="feedbacks.html">Feedbacks</a></li>
+        <li class="link"><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <a href="login.html">
+        <button class="btn">Junte-se Agora</button>
+      </a>    
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>ENTRE EM CONTATO CONOSCO</h4>
+        <h1><span>Fale</span> Conosco</h1>
+        <p>
+          Estamos aqui para responder às suas perguntas. Se precisar de ajuda ou tiver alguma dúvida, preencha o formulário abaixo ou entre em contato conosco diretamente!
+        </p>
+      </div>
+      <div class="header__image">
+        <img src="img/header.png" alt="header" />
+      </div>
+    </header>
+
+    <section class="section__container contact__container">
+      <h2 class="section__header">Formulário de Contato</h2>
+      <form action="enviar-mensagem.php" method="POST">
+        <div class="contact__form">
+          <div class="form__group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="form__group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form__group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar Mensagem</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__bar">
+        Copyright © 2024 Trajetus. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      // Redirecionar para a página de pagamento com o plano selecionado
+      document.getElementById("basic-plan-btn").onclick = function() {
+        window.location.href = "pagamento.html?plano=basic";
+      };
+      document.getElementById("weekly-plan-btn").onclick = function() {
+        window.location.href = "pagamento.html?plano=weekly";
+      };
+      document.getElementById("monthly-plan-btn").onclick = function() {
+        window.location.href = "pagamento.html?plano=monthly";
+      };
+    </script>
+  </body>
+</html>
